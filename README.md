@@ -20,7 +20,7 @@ This is a Spring Boot application that serves as a template for building RESTful
 ## Setup and Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/spring-boot-app.git
+   git clone https://github.com/firasgh95/LMS
    cd spring-boot-app
    ```
 
@@ -47,11 +47,13 @@ Application properties are defined in `src/main/resources/application.properties
 
 Example (for an H2 database):
 ```properties
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=
-spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.application.name=lib
+server.port=8081
+
+spring.datasource.url=jdbc:mysql://localhost:3300/library
+spring.datasource.username=root
+spring.datasource.password=admin
+spring.jpa.hibernate.ddl-auto=update
 ```
 
 ## API Endpoints
@@ -74,5 +76,4 @@ mvn test
 ## Actuator Endpoints (if enabled)
 - Health Check: `http://localhost:8080/actuator/health`
 - Metrics: `http://localhost:8080/actuator/metrics`
-
 
